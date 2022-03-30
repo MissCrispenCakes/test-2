@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="En">
+<head>
+  <meta charset="UTF-8">
+  <title> lab 3 </title> 
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" title="style" /> -->
+  <style>
+    body {
+    background-color:rgb(233, 214, 44);
+    font-family: sans-serif;
+    margin-left: 25%;
+  }
+
+  .content {
+    border-color:black;
+    border-style: solid;
+    background-color: white;
+    padding-bottom: 350px;
+    margin-right: 40%
+  }
+
+    button {
+    display: inline;
+    margin-right:5px;
+  }
+
+  hr {
+      background-color: rgb(0, 0, 0);
+      border: 0 none;
+      color: rgb(0, 0, 0);
+      height: 3px;
+  }
+  </style>
+  <!-- <link rel="stylesheet" src="style.css"> -->
+  <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+  <div class="content">
+    <header>
+      <h1>Send a message Here and it Will be Displayed</h1>
+    </header>
+    <div class="RGBchange">
+      <button onclick="message()"> Send a Message </button>
+      <button onclick="changeColor()">Change text Color</button>
+      <button class="button" type="button" onclick="changesketch('pages/sketch.html')">Ckick to see Sketchboard</button>
+      <nav class="strong"><p id="output">	</p> </nav>
+    </div>
+    <!-- inline the script or you'll need to associate the message function directing to a js file -->
+    <script>
+      function message(){
+        var outputObj = document.getElementById("output");
+        var msg = prompt("Please enter a message: ", "");
+        outputObj.innerHTML = outputObj.innerHTML + msg + "<hr>";
+      }
+
+      function changeColor(){
+        var outputObj = document.getElementById("output");
+        var col = prompt("Please enter the name of the color: ", "");
+        document.querySelector('p').style.color=col;
+      }
+
+      // Heroku will only read 1 html for some reason, linking another html doc will not work and linking a button to another html doc will bring back to this original doc
+      function changesketch(url){
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      }
+    </script>
+  </div>
+</body>
+</html>

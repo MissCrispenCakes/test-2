@@ -1,0 +1,25 @@
+  body {
+  background-color:rgb(233, 214, 44);
+  font-family: sans-serif;
+  margin-left: 25%;
+}
+
+.content {
+  border-color:black;
+  border-style: solid;
+  background-color: white;
+  padding-bottom: 350px;
+  margin-right: 40%
+}
+
+  button {
+  display: inline;
+  margin-right:5px;
+}
+
+hr {
+    background-color: rgb(0, 0, 0);
+    border: 0 none;
+    color: rgb(0, 0, 0);
+    height: 3px;
+}

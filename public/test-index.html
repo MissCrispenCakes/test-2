@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+  <meta charset="UTF-8">
+  <title> lab 3 </title> 
+  <!-- <link rel="stylesheet" type="text/css" href="style.css" title="style" /> -->
+  <style>
+    body {
+    background-color:rgb(233, 214, 44);
+    font-family: sans-serif;
+    margin-left: 25%;
+    }
+
+    .content {
+      border-color:black;
+      border-style: solid;
+      background-color: white;
+      padding-bottom: 350px;
+      margin-right: 40%
+    }
+
+    button {
+      display: inline;
+      margin-right:5px;
+    }
+
+    hr {
+      background-color: rgb(0, 0, 0);
+      border: 0 none;
+      color: rgb(0, 0, 0);
+      height: 3px;
+    }
+
+    .fakebutton {
+      background-color: #e7e7e7; 
+      color: black;
+      font-size: 12px;
+      padding: 4px;
+      border-radius: 4px;
+      border: 1px solid #555555;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+  </style>
+  <!-- <link rel="stylesheet" src="style.css"> -->
+  <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+
+  <div class="content">
+    <header>
+      <h1>Send a message Here and it Will be Displayed</h1>
+    </header>
+    <div class="RGBchange">
+      <button onclick="message()"> Send a Message </button>
+      <button onclick="changeColor()">Change text Color</button>
+      <p><a class="fakebutton" href="./pages/sketch.html" target="iframe_a">Click to see Sketchboard</a></p>
+      <iframe id="myIframe" src="" name="iframe_a" height="400px" width="100%" title="Iframe Example"></iframe>
+      <nav class="strong"><p id="output"></p></nav>
+    </div>  
+    <script type="text/javascript">
+      function message(){
+        var outputObj = document.getElementById("output");
+        var msg = prompt("Please enter a message: ", "");
+        outputObj.innerHTML = outputObj.innerHTML + msg + "<hr>";
+      }
+
+      function changeColor(){
+        var outputObj = document.getElementById("output");
+        var col = prompt("Please enter the name of the color: ", "");
+        document.querySelector('p').style.color=col;
+      }
+    </script>
+
+
+  </div>
+
+</body>
+
+</html>
